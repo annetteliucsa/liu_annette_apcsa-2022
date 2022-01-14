@@ -20,7 +20,7 @@ public class AsciiArt
 		System.out.println("             [------]             " );
 		System.out.println("             [------]             ");
 		System.out.println("             [------]             ");
-		
+		System.out.println("             [------]             ");
 		//add other output
 
 		System.out.println(" \n\n\n\nHelpFul Hints" );
