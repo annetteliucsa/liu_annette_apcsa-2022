@@ -8,6 +8,6 @@ public class Trap
 {
 	public static double area( int base1, int base2, int height )
 	{
-		return 0;
+		return (double) height * ((double)base1 + (double)base2)/2;
 	}
 }
