@@ -46,8 +46,8 @@ public class MilesPerHour
 		System.out.print(distance + " miles in ");
 		System.out.print(hours + " hour and ");
 		System.out.print(minutes + " minutes = ");
-		System.out.printf("%.0f\n", mph);
-		System.out.print("MPH.");
+		System.out.printf("%.0f", mph);
+		System.out.print(" MPH.");
 		
 	}
 	
