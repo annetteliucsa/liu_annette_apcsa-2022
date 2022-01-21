@@ -17,33 +17,46 @@ public class Distance
 
 	public Distance()
 	{
+		setCoordinates(0,0,0,0);
 	}
 
 	public Distance(int x1, int y1, int x2, int y2)
 	{
+		setCoordinates(x1, y1, x2, y2);
 	}
 
 	public void setCoordinates(int x1, int y1, int x2, int y2)
 	{
+		xOne = x1;
+		yOne = y1;
+		xTwo = x2;
+		yTwo = y2;
 	}
 
 	public void calcDistance()
 	{
+		double xValue = Math.pow(xTwo - xOne, 2);
+		double yValue = Math.pow(yTwo - yOne, 2);
+		double xPlusY = xValue + yValue;
+		distance = Math.sqrt(xPlusY);
 	}
 	
 	public double getDistance()
 	{
-		return 0.0;
+		calcDistance();
+		return distance;
 	}
 	
 	public void print()
 	{
+		out.printf("%.3f\n", distance);
 	}
 	
 	//complete print or the toString
 
 	public String toString()
 	{
-		return "";
+		String str = String.valueOf(distance);
+		return str;
 	}
 }
