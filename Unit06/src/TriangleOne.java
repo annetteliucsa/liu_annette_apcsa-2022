@@ -30,6 +30,6 @@ public class TriangleOne
 		for(int i = size; i > 0; i--) {
 			myString += word.substring(0, i) + "\n";
 		}
-		System.out.println(myString);
+		System.out.println(myString);	
 	}
 }
