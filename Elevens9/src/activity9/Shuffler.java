@@ -1,4 +1,4 @@
-package Shuffler;
+package activity9;
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -60,27 +60,8 @@ public class Shuffler {
 	 * the cards in one half with the cards in the other.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void perfectShuffle(int[] values) { //break cards in half, weave card so bottom on left goes under bottom of right stack which goes under 2nd to bottom on left
-		int[] temp = new int[values.length];
-		int k = 0; //first loop must copy one more card than second (if odd # cards is shuffled, temp has 1 more even indexed position than odd)
-		for(int j = 0; j < values.length/2; j++)
-		{
-			temp[k] = values[j];
-			k+=2;
-		}
-		k = 1;
-		
-		for(int j = values.length/2; j < values.length; j++)
-		{
-			temp[k] = values[j];
-			k+= 2;
-		}
-		
-		
-		for(int i = 0; i < temp.length; i++)
-		{
-			values[i] = temp[i];
-		}
+	public static void perfectShuffle(int[] values) {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 	}
 
 	/**
@@ -94,17 +75,7 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {//random card to put end of list, remaining choose card put next to
-		
-		for(int i = values.length-1; i > 0; i--)
-		{
-			int pos = (int)(Math.random() * i);
-			int temp = values[pos];
-			values[pos] = values[i];
-			values[i] = temp;
-			}
-		
-		
-		
+	public static void selectionShuffle(int[] values) {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 	}
 }

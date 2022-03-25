@@ -1,9 +1,6 @@
-package Deck;
-import java.util.ArrayList;
-import java.util.Arrays;
+package activity9;
 import java.util.List;
-
-import Card.Card;
+import java.util.ArrayList;
 
 /**
  * The Deck class represents a shuffled deck of cards.
@@ -33,16 +30,13 @@ public class Deck {
 	 * @param suits is an array containing all of the card suits.
 	 * @param values is an array containing all of the card point values.
 	 */
-	
-	public Deck(String[] myRanks, String[] mySuits, int[] myValues)
-	{
-		
+	public Deck(String[] ranks, String[] suits, int[] values) {
 		cards = new ArrayList<Card>();
-		for(int j = 0; j < myRanks.length; j++) //go through ranks
+		for(int j = 0; j < ranks.length; j++) //go through ranks
 		{
-			for(String suitString : mySuits) //go through suits of ranks
+			for(String suitString : suits) //go through suits of ranks
 			{
-				Card newCard = new Card(myRanks[j], suitString, myValues[j]);
+				Card newCard = new Card(ranks[j], suitString, values[j]);
 				cards.add(newCard); //add each card to deck
 				
 			}
@@ -50,29 +44,13 @@ public class Deck {
 		size = cards.size();
 		shuffle();
 	}
-	
-	/*public Deck(String[] ranks, String[] suits, int[] values) {
-		cards = new Card[ranks.length*suits.length];
-		System.out.println(ranks.length +  " " + suits.length + " " + values.length);
-		for(int i = 0; i < ranks.length; i++) //loop through ranks
-		{
-			for(int j = 0; j < suits.length; j++)//loop through suits
-			{
-				int cardIndex = (suits.length)* i + j; //where placing card in array
-				System.out.println(i + " " + j + " " + cardIndex);
-				cards[cardIndex] = new Card(ranks[i], suits[j], values[i]);
-			}
-		}
-		size = cards.length;
-		System.out.println(Arrays.toString(cards));
-		shuffle();
-	}
+
+
 	/**
 	 * Determines if this deck is empty (no undealt cards).
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
-	
 		return size == 0;
 	}
 
@@ -84,10 +62,11 @@ public class Deck {
 		return size;
 	}
 
-	
-	
-	
-	public void shuffle() {//pull random card and put it on top
+	/**
+	 * Randomly permute the given collection of cards
+	 * and reset the size to represent the entire deck.
+	 */
+	public void shuffle() {
 		for(int k = cards.size() - 1; k > 0; k--)
 		{
 			int howMany = k + 1;
@@ -98,31 +77,13 @@ public class Deck {
 			cards.set(randPos, temp);		 //get card at random position
 		}
 	}
-	/**
-	 * Randomly permute the given collection of cards
-	 * and reset the size to represent the entire deck.
-	 */
-	/*public void shuffle() {//random
-		for(int k = cards.length - 1; k > 0; k--)
-		{
-			int howMany = k + 1;
-			int start = 0;
-			int randPos = (int)(Math.random() * howMany) + start;
-			Card temp = cards[k]; //ref to cards array
-			cards[k] = cards[randPos];// 3 line swap // get card and assign
-			cards[randPos] = temp;
-			size = cards.length;
-			
-			
-		}
-	}
+
 	/**
 	 * Deals a card from this deck.
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
-	public Card deal() {  
-//deals a card by removing it from deck and returning it if there are cards left in deck
+	public Card deal() {
 		if(isEmpty())
 		{
 			return null;
@@ -142,7 +103,6 @@ public class Deck {
 		String rtn = "size = " + size + "\nUndealt cards: \n";
 
 		for (int k = size - 1; k >= 0; k--) {
-		//	rtn = rtn + cards[k];
 			rtn = rtn + cards.get(k);
 			if (k != 0) {
 				rtn = rtn + ", ";
@@ -154,13 +114,12 @@ public class Deck {
 		}
 
 		rtn = rtn + "\nDealt cards: \n";
-		for (int k = size - 1; k >= 0; k--) {//cards.length , >= size
-			//rtn = rtn + cards[k];
+		for (int k = cards.size() - 1; k >= size; k--) {
 			rtn = rtn + cards.get(k);
-			if (k != size-1) {
+			if (k != size) {
 				rtn = rtn + ", ";
 			}
-			if ((k - cards.size()) % 2 == 0) { //k-cards.length
+			if ((k - cards.size()) % 2 == 0) {
 				// Insert carriage returns so entire deck is visible on console.
 				rtn = rtn + "\n";
 			}

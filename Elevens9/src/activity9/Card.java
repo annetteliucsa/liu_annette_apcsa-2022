@@ -1,4 +1,4 @@
-package Card;
+package activity9;
 /**
  * Card.java
  *
@@ -17,11 +17,11 @@ public class Card {
 	private String rank;
 
 	/**
-	 * integer value that holds the point value.
+	 * int value that holds the point value.
 	 */
 	private int pointValue;
 
-	
+
    /**
 	 * Creates a new <code>Card</code> instance.
 	 *
@@ -69,15 +69,12 @@ public class Card {
 	 *              are equal to those of the argument;
 	 *         false otherwise.
 	 */
-	public boolean matches(Card otherCard) { //if one card matches another
+	public boolean matches(Card otherCard) {
 		return otherCard.suit().equals(this.suit())
-		&& otherCard.rank().equals(this.rank())
-		&& otherCard.pointValue() == this.pointValue();
+				&& otherCard.rank().equals(this.rank())
+				&& otherCard.pointValue() == this.pointValue();
 	}
 
-	
-	
-	
 	/**
 	 * Converts the rank, suit, and point value into a string in the format
 	 *     "[Rank] of [Suit] (point value = [PointValue])".
