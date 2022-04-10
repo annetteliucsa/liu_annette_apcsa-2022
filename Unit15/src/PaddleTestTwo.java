@@ -22,10 +22,21 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 	public PaddleTestTwo()
 	{
 		//set up all game variables
-
+		ball = new Ball();
+		leftPaddle = new Paddle(20, 300, 5);
+		keys = new boolean[5];
 
 		//instantiate a Ball
+		setBackground(Color.white);
+		setVisible(true);
 		
+		this.addKeyListener(this);
+		new Thread(this).start();
+		
+		
+
+
+		keys = new boolean[5];
 		
 		
 		//instantiate a left Paddle
@@ -78,6 +89,7 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 		if(keys[1] == true)
 		{
 			//move left paddle down and draw it on the window
+			leftPaddle.moveDownAndDraw(window);
 
 
 		}
