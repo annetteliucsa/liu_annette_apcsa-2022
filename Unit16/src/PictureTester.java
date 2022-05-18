@@ -62,6 +62,12 @@ public class PictureTester
 	    beach.explore();
 	  }
 	  
+	  public static void testEdgeDetection2() {
+		  Picture beach = new Picture("beach.jpg");
+		  beach.edgeDetection2(0);
+		  beach.explore();
+	  }
+	  
 	  public static void testKeepOnlyBlue()
 	  {
 	    Picture beach = new Picture("beach.jpg");
